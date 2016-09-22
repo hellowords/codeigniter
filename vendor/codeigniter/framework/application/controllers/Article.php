@@ -13,13 +13,13 @@ class Article extends CI_Controller
 	}
 
 	//show someone article 
-	public function show($content = 'nice' )
+	public function show($content = 'My first Content' )
 	{
 		$data['article'] = $this->Articles_model->get_article($content);
 		$data['title'] = ucfirst($content);
 		$data['hello'] = 'hiwud';
 		$this->load->view('article/article',$data);
-		var_dump(json_encode($data['article']));
+		echo json_encode($data['article']);
 		exit;
 		// $this->load->view('article/article',$data);
 		// $this->load->view('article/article',$data);
